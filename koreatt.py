@@ -2,7 +2,7 @@ import re
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-# from github import Github, Issue
+from github import Github, Issue
 import datetime
 from pytz import timezone
 from dateutil.parser import parse
@@ -19,6 +19,13 @@ if r_c <= 89:
 else:
     print("대기합니다.")
 
+issue_body = ""
+GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+REPO_NAME = "crawler-study-gathering"
+repo = Github(GITHUB_TOKEN).get_user().get_repo(REPO_NAME)
+if issue_body != "" and REPO_NAME == repo.name:
+    res = repo.create_issue(title=issue_title, body=issue_body)
+    print(res)
 
 # KST = timezone('Asia/Seoul')
 # today = datetime.datetime.now(KST)
