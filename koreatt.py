@@ -25,7 +25,7 @@ issue_title = "hello github Action! 89명 이하 입니다."
 # GITHUB_TOKEN = "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"
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 REPO_NAME = "dexelop/koreatt"
-repo = Github(GITHUB_TOKEN).get_user().get_repo(REPO_NAME)
+repo = Github(GITHUB_TOKEN).get_repo(REPO_NAME)  # .get_user().get_repo(REPO_NAME)
 if r_c <= 89 and REPO_NAME == repo.name:
     res = repo.create_issue(title=issue_title, body=issue_body)
     print(res)
