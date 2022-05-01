@@ -19,14 +19,16 @@ if r_c <= 89:
 else:
     print("대기합니다.")
 
-issue_body = ""
+issue_body = str(r_c) + " 명 입니다."
+issue_title = "hello github Action! 89명 이하 입니다."
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
-REPO_NAME = "crawler-study-gathering"
+REPO_NAME = "koreatt"
 repo = Github(GITHUB_TOKEN).get_user().get_repo(REPO_NAME)
-if issue_body != "" and REPO_NAME == repo.name:
+if r_c <= 89 and REPO_NAME == repo.name:
     res = repo.create_issue(title=issue_title, body=issue_body)
     print(res)
-
+else:
+    res = repo.create_issue(title="빈자리가 없네요", body="돌아가")
 # KST = timezone('Asia/Seoul')
 # today = datetime.datetime.now(KST)
 
