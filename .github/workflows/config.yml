@@ -20,7 +20,7 @@ jobs:
         pip install PyGithub
         pip install python-dateutil
     - name: Run Crawler
-      run: |
-        python koreatt.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python koreatt.py
