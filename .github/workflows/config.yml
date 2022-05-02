@@ -9,19 +9,16 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
     - name: Install dependencies
       run: |
-        pip install --upgrade pip
-        pip install beautifulsoup4
-        pip install pytz
-        pip install PyGithub
-        pip install python-dateutil
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run Crawler
       run: |
         echo MY G_T is $GITHUB_TOKEN
         python koreatt.py
       env:
-        GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

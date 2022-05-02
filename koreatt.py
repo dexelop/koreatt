@@ -21,25 +21,15 @@ if r_c <= 89:
 else:
     print("대기합니다.")
 
-upload_contents = "contents 입니다."
 issue_title = "hello github Action! 89명 이하 입니다."
-# GITHUB_TOKEN = "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"
+upload_contents = "contents 입니다."
 access_token = os.environ["GITHUB_TOKEN"]
 repository_name = "koreatt"
 repo = get_github_repo(access_token, repository_name)
 
-# repo = Github(GITHUB_TOKEN).get_repo(REPO_NAME)  # .get_user().get_repo(REPO_NAME)
-print(repo)  # .name)
-if r_c <= 89:  # and REPO_NAME == repo:  # .name
+print(repo)
+if r_c <= 89:
     upload_github_issue(repo, issue_title, upload_contents)
-    # res = repo.create_issue(title=issue_title, body=issue_body)
     print("Upload Github Issue Success!")
 else:
-    pass
-
-
-# issue_title = f"YES24 IT 신간 도서 알림({today_date})"
-# upload_contents = extract_book_data(soup)
-# repo = get_github_repo(access_token, repository_name)
-# upload_github_issue(repo, issue_title, upload_contents)
-# print("Upload Github Issue Success!")
+    print("nothin happen")
