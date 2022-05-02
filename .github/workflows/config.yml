@@ -22,6 +22,6 @@ jobs:
     - name: Run Crawler
       run: |
         echo MY G_T is $GITHUB_TOKEN
-        python koreatt.pypython crawler.py
+        python koreatt.py
       env:
         GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN }}
