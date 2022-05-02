@@ -27,7 +27,7 @@ GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 REPO_NAME = "dexelop/koreatt"
 repo = Github(GITHUB_TOKEN).get_repo(REPO_NAME)  # .get_user().get_repo(REPO_NAME)
 print(repo.name)
-if r_c <= 89 and REPO_NAME == repo:  # .name
+if r_c <= 89:  # and REPO_NAME == repo:  # .name
     res = repo.create_issue(title=issue_title, body=issue_body)
     print(res)
 else:
