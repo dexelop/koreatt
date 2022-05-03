@@ -24,6 +24,7 @@ else:
 issue_title = "hello github Action! 89명 이하 입니다."
 upload_contents = "contents 입니다."
 access_token = os.environ["GITHUB_TOKEN"]
+print("repr :", repr(access_token), len(access_token))
 repository_name = "koreatt"
 repo = get_github_repo(access_token, repository_name)
 
