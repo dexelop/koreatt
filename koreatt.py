@@ -18,8 +18,8 @@ r_c = int(reg_count.split("명")[0])
 
 access_token = os.environ["MY_GITHUB_TOKEN"]
 repository_name = "koreatt"
-issue_title = ""
-upload_contents = ""
+issue_title = "else"
+upload_contents = "else contents"
 repo = get_github_repo(access_token, repository_name)
 
 if r_c <= 89:
@@ -28,6 +28,7 @@ if r_c <= 89:
     upload_github_issue(repo, issue_title, upload_contents)
     print("접수하세요~")
 else:
+    upload_github_issue(repo, issue_title, upload_contents)
     print("대기합니다.")
 
 # print(repo)
