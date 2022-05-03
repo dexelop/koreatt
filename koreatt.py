@@ -9,7 +9,8 @@ from pytz import timezone
 from dateutil.parser import parse
 import os
 
-site = "http://www.koreatakgu.com/seoul/2017/Do.jsp?urlSeq=1105&ldf=D&raceSeq=1249"
+site = os.environ["My_koreatt_url"]
+# site = "http://www.koreatakgu.com/seoul/2017/Do.jsp?urlSeq=1105&ldf=D&raceSeq=1249"
 res = urlopen(site)
 soup = BeautifulSoup(res, "html.parser")
 reg_count = soup.select_one("td:nth-child(2) > a > span").string
