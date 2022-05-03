@@ -25,11 +25,6 @@ issue_title = "hello github Action! 89명 이하 입니다."
 upload_contents = "contents 입니다."
 
 access_token = os.environ["MY_GITHUB_TOKEN"]
-print(">>>", len(access_token))
-print(">>>", " ".join(str(ord(ch)) for ch in access_token))
-import sys
-sys.stdout.flush()
-
 repository_name = "koreatt"
 repo = get_github_repo(access_token, repository_name)
 
