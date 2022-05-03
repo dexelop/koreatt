@@ -35,7 +35,7 @@ if r_c <= 89:
     upload_github_issue(repo, issue_title, upload_contents)
     print("접수하세요~")
 else:
-    upload_github_issue(repo, issue_title, upload_contents)
+    # upload_github_issue(repo, issue_title, upload_contents)
     print("대기합니다.")
 
 # print(repo)
