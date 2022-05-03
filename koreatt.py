@@ -19,7 +19,7 @@ soup = BeautifulSoup(res, "html.parser")
 reg_count = soup.select_one("td:nth-child(2) > a > span").string
 r_c = int(reg_count.split("명")[0])
 
-#
+
 access_token = os.environ["MY_GITHUB_TOKEN"]
 repository_name = "koreatt"
 issue_title = f"대기인원이 ({r_c})가득 찼습니다.{today.strftime('%Y년 %m월 %d일 %H시')}"
