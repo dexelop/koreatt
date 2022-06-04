@@ -1,9 +1,9 @@
 name: '접수인원 보고 이슈 등록하기'
 
 on:
-  # push:
-  schedule:
-    - cron: '*/5 * * * *'
+  push:
+  # schedule:
+  #   - cron: '*/5 * * * *'
 
 jobs:
   run:
